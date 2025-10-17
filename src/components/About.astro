@@ -1,0 +1,88 @@
+---
+import RocketEffect from './RocketEffect.tsx';
+import ExplosiveEffect from './ExplosiveEffect.tsx';
+---
+
+<section id="about" class="py-20 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="text-4xl sm:text-5xl font-bold mb-4 animate-slide-in-down">
+        Sobre <span class="text-gradient text-shimmer">Mí</span>
+      </h2>
+      <p class="text-gray-400 text-lg max-w-2xl mx-auto animate-slide-in-up" style="animation-delay: 0.3s;">
+        Ingeniero de Sistemas apasionado por el desarrollo FullStack y la optimización de procesos
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+      <div>
+        <div class="relative">
+          <div class="absolute inset-0 bg-gradient-to-r from-primary-500 to-accent-500 rounded-2xl blur-xl opacity-20"></div>
+          <div class="relative bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-8">
+            <h3 class="text-2xl font-semibold mb-4">Mi Historia</h3>
+            <p class="text-gray-400 leading-relaxed mb-4">
+              Soy un Ingeniero de Sistemas con experiencia sólida en desarrollo FullStack, análisis de datos 
+              y administración de bases de datos. Mi trayectoria profesional me ha llevado a trabajar con 
+              tecnologías como .NET, Node.js, Go, Python, SQL y MongoDB.
+            </p>
+            <p class="text-gray-400 leading-relaxed">
+              Me especializo en la creación de APIs RESTful escalables, automatización de procesos, 
+              monitoreo de servicios y optimización de rendimiento. También tengo experiencia en 
+              visualización de datos con Power BI y metodologías ágiles como Scrum.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2 gap-4">
+        <RocketEffect effectType="pulse">
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300 hover-lift magnetic animate-fade-in-scale" style="animation-delay: 0.6s;">
+            <div class="text-accent-400 mb-3 animate-pulse-slow">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold mb-2">Código Limpio</h4>
+            <p class="text-sm text-gray-400">Escribo código mantenible y escalable siguiendo las mejores prácticas.</p>
+          </div>
+        </RocketEffect>
+
+        <RocketEffect effectType="sparkle">
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300 hover-lift magnetic animate-fade-in-scale" style="animation-delay: 0.7s;">
+            <div class="text-accent-400 mb-3 animate-pulse-slow">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold mb-2">Análisis de Datos</h4>
+            <p class="text-sm text-gray-400">Experiencia en visualización de datos y Power BI.</p>
+          </div>
+        </RocketEffect>
+
+        <RocketEffect effectType="glow">
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300 hover-lift magnetic animate-fade-in-scale" style="animation-delay: 0.8s;">
+            <div class="text-accent-400 mb-3 animate-pulse-slow">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold mb-2">Optimización</h4>
+            <p class="text-sm text-gray-400">Enfocado en rendimiento y escalabilidad de aplicaciones.</p>
+          </div>
+        </RocketEffect>
+
+        <ExplosiveEffect>
+          <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300 hover-lift magnetic animate-fade-in-scale" style="animation-delay: 0.9s;">
+            <div class="text-accent-400 mb-3 animate-pulse-slow">
+              <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+              </svg>
+            </div>
+            <h4 class="font-semibold mb-2">Pasión</h4>
+            <p class="text-sm text-gray-400">Amo lo que hago y me esfuerzo por mejorar cada día.</p>
+          </div>
+        </ExplosiveEffect>
+      </div>
+    </div>
+  </div>
+</section>

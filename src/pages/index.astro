@@ -1,0 +1,35 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import About from '../components/About.astro';
+import Experience from '../components/Experience.astro';
+import Projects from '../components/Projects.astro';
+import Skills from '../components/Skills.astro';
+import Contact from '../components/Contact.astro';
+import Footer from '../components/Footer.astro';
+import BackgroundEffects from '../components/BackgroundEffects.tsx';
+import ParticleBackground from '../components/ParticleBackground.tsx';
+import FloatingElements from '../components/FloatingElements.tsx';
+import RocketEffect from '../components/RocketEffect.tsx';
+import ExplosiveEffect from '../components/ExplosiveEffect.tsx';
+---
+
+<Layout>
+  <div class="relative min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white overflow-hidden">
+    <BackgroundEffects client:load />
+    <ParticleBackground client:load />
+    <FloatingElements client:load />
+    
+    <div class="relative z-10">
+      <Navbar />
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Skills />
+      <Contact />
+      <Footer />
+    </div>
+  </div>
+</Layout>
