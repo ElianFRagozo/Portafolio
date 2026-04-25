@@ -123,28 +123,63 @@
             </svg>
             Enviar Mensaje
           </button>
+
+          <p id="form-status" class="text-sm text-center text-gray-400 hidden"></p>
         </form>
+
+        <p class="text-xs text-gray-500 text-center mt-4">
+          Al enviar se abrirá tu cliente de correo con el mensaje listo para enviar.
+        </p>
       </div>
     </div>
   </div>
 </section>
 
 <script>
-  // Form submission
+  // Contact form: opens the user's email client with the message prefilled.
+  // Funciona sin backend ni servicios externos.
+  //
+  // Para upgrade futuro a un servicio que envíe directo (sin abrir cliente de correo),
+  // ver: https://formspree.io  o  https://www.emailjs.com
+  // Reemplazar el bloque "mailto" abajo por una llamada fetch() al endpoint.
+
+  const TARGET_EMAIL = 'elianenriquefragozoruiz@gmail.com';
+
   document.getElementById('contact-form')?.addEventListener('submit', function(e) {
     e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const data = Object.fromEntries(formData);
-    
-    // Here you can integrate with EmailJS or another service
-    console.log('Form submitted:', data);
-    
-    // Show success message
-    alert('¡Mensaje enviado! Te contactaré pronto.');
-    
-    // Reset form
-    this.reset();
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    const name = (formData.get('name') as string || '').trim();
+    const email = (formData.get('email') as string || '').trim();
+    const message = (formData.get('message') as string || '').trim();
+
+    if (!name || !email || !message) return;
+
+    const subject = `Nuevo proyecto · ${name}`;
+    const body =
+`Hola Elian,
+
+Mi nombre es ${name} y te contacto desde tu portafolio.
+
+${message}
+
+---
+Email de contacto: ${email}`;
+
+    const mailtoUrl = `mailto:${TARGET_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+
+    // Abre el cliente de email del usuario con el mensaje listo
+    window.location.href = mailtoUrl;
+
+    // Feedback visible
+    const status = document.getElementById('form-status');
+    if (status) {
+      status.textContent = '✓ Tu cliente de correo se abrió con el mensaje. Solo dale enviar.';
+      status.classList.remove('hidden');
+      status.classList.add('text-green-400');
+    }
+
+    setTimeout(() => form.reset(), 1500);
   });
 </script>

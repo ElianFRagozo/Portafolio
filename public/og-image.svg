@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="og-bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#070a1a"/>
+      <stop offset="100%" stop-color="#060816"/>
+    </linearGradient>
+    <radialGradient id="og-glow1" cx="0.15" cy="0.2" r="0.5">
+      <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="og-glow2" cx="0.85" cy="0.85" r="0.4">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="og-glow3" cx="0.7" cy="0.3" r="0.3">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="og-text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="60%" stop-color="#00e5ff"/>
+      <stop offset="100%" stop-color="#00ff88"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#og-bg)"/>
+  <rect width="1200" height="630" fill="url(#og-glow1)"/>
+  <rect width="1200" height="630" fill="url(#og-glow2)"/>
+  <rect width="1200" height="630" fill="url(#og-glow3)"/>
+
+  <!-- Grid -->
+  <g stroke="#00e5ff" stroke-opacity="0.05" stroke-width="1">
+    <line x1="0" y1="100" x2="1200" y2="100"/>
+    <line x1="0" y1="200" x2="1200" y2="200"/>
+    <line x1="0" y1="300" x2="1200" y2="300"/>
+    <line x1="0" y1="400" x2="1200" y2="400"/>
+    <line x1="0" y1="500" x2="1200" y2="500"/>
+    <line x1="200" y1="0" x2="200" y2="630"/>
+    <line x1="400" y1="0" x2="400" y2="630"/>
+    <line x1="600" y1="0" x2="600" y2="630"/>
+    <line x1="800" y1="0" x2="800" y2="630"/>
+    <line x1="1000" y1="0" x2="1000" y2="630"/>
+  </g>
+
+  <!-- Available badge -->
+  <g transform="translate(80, 80)">
+    <rect x="0" y="0" width="220" height="44" rx="22" fill="#00ff88" fill-opacity="0.12" stroke="#00ff88" stroke-opacity="0.5"/>
+    <circle cx="22" cy="22" r="5" fill="#00ff88"/>
+    <text x="38" y="28" font-family="system-ui, sans-serif" font-size="14" font-weight="600" fill="#00ff88" letter-spacing="2">DISPONIBLE · COLOMBIA</text>
+  </g>
+
+  <!-- Tagline -->
+  <text x="80" y="195" font-family="system-ui, sans-serif" font-size="22" font-weight="500" fill="#00e5ff" letter-spacing="6">SOLUCIONES DIGITALES A LA MEDIDA</text>
+
+  <!-- Name -->
+  <text x="80" y="290" font-family="system-ui, sans-serif" font-size="96" font-weight="900" fill="url(#og-text)" letter-spacing="-3">Elian Fragozo</text>
+
+  <!-- Role -->
+  <text x="80" y="350" font-family="system-ui, sans-serif" font-size="32" font-weight="500" fill="#d8e0f0">Desarrollador de Software · Full Stack</text>
+
+  <!-- Promise -->
+  <text x="80" y="410" font-family="system-ui, sans-serif" font-size="26" font-weight="400" fill="#aab4cc">Sitios web, sistemas de gestión y dashboards</text>
+  <text x="80" y="445" font-family="system-ui, sans-serif" font-size="26" font-weight="400" fill="#aab4cc">para negocios que quieren crecer.</text>
+
+  <!-- Service tags -->
+  <g font-family="system-ui, sans-serif" font-size="18" font-weight="600">
+    <rect x="80" y="490" width="180" height="44" rx="22" fill="#00e5ff" fill-opacity="0.12" stroke="#00e5ff" stroke-opacity="0.4"/>
+    <text x="170" y="518" text-anchor="middle" fill="#00e5ff">Sitios Web</text>
+
+    <rect x="275" y="490" width="240" height="44" rx="22" fill="#00ff88" fill-opacity="0.12" stroke="#00ff88" stroke-opacity="0.4"/>
+    <text x="395" y="518" text-anchor="middle" fill="#00ff88">Sistemas de Gestión</text>
+
+    <rect x="530" y="490" width="200" height="44" rx="22" fill="#ff66ff" fill-opacity="0.15" stroke="#ff66ff" stroke-opacity="0.5"/>
+    <text x="630" y="518" text-anchor="middle" fill="#ff99ff">Power BI · Datos</text>
+  </g>
+
+  <!-- URL footer -->
+  <text x="80" y="585" font-family="monospace" font-size="18" font-weight="600" fill="#7a8aa8" letter-spacing="2">github.com/ElianFRagozo</text>
+
+  <!-- Decorative element right side -->
+  <g transform="translate(880, 200)">
+    <circle cx="100" cy="100" r="120" fill="none" stroke="#00e5ff" stroke-width="1" stroke-opacity="0.2"/>
+    <circle cx="100" cy="100" r="90" fill="none" stroke="#00ff88" stroke-width="1" stroke-opacity="0.3"/>
+    <circle cx="100" cy="100" r="60" fill="#00e5ff" fill-opacity="0.08" stroke="#00e5ff" stroke-width="2" stroke-opacity="0.5"/>
+    <text x="100" y="115" font-family="system-ui, sans-serif" font-size="48" font-weight="900" fill="#fff" text-anchor="middle">EF</text>
+  </g>
+</svg>

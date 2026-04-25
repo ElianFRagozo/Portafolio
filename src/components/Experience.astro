@@ -1,104 +1,172 @@
 ---
+const experiences = [
+  {
+    role: 'Desarrollador Full Stack Freelance',
+    company: 'Unabase',
+    location: 'Chile (Remoto)',
+    period: 'Mar. 2025 – Actualidad',
+    current: true,
+    bullets: [
+      'Desarrollo y mantenimiento de sistemas web con JavaScript, jQuery, Vue.js, Node.js y Chart.js.',
+      'Optimización de aplicaciones web robustas y escalables integrando bases de datos SQL, MongoDB y 4D.',
+      'Implementación de visualizaciones interactivas con Chart.js para reportes y dashboards de negocio.'
+    ],
+    highlight: null
+  },
+  {
+    role: 'Desarrollador Full Stack',
+    company: 'Palm IT',
+    location: 'Colombia (Remoto)',
+    period: 'Nov. 2025 – Ene. 2026',
+    current: false,
+    bullets: [
+      'Diseño y desarrollo de aplicaciones bajo arquitectura de microservicios con Java Spring Boot y Angular.',
+      'Implementación y consumo de APIs REST documentadas con Swagger sobre PostgreSQL.',
+      'Gestión de contenedores con Docker y despliegue en entornos DEV y QA sobre Azure.',
+      'Trabajo bajo metodología Scrum: ceremonias ágiles, historias de usuario y resolución de bugs.'
+    ],
+    highlight: {
+      title: 'Stack destacado:',
+      text: 'Java Spring Boot · Angular · PostgreSQL · Docker · Azure · Swagger'
+    }
+  },
+  {
+    role: 'QA Tester',
+    company: 'Velocity Go',
+    location: 'Colombia (Remoto)',
+    period: 'Mar. 2025 – Sept. 2025',
+    current: false,
+    bullets: [
+      'Diseño, ejecución y documentación de casos de prueba manuales para aplicaciones web y móviles.',
+      'Pruebas funcionales, de regresión, smoke y exploratorias asegurando la calidad de cada entrega.',
+      'Reporte y gestión de defectos en Jira con pasos de reproducción y evidencias.',
+      'Colaboración con el equipo de desarrollo para corrección de errores y verificación de fixes.'
+    ],
+    highlight: null
+  },
+  {
+    role: 'Desarrollador Backend',
+    company: 'Creador de Soluciones Tecnológicas',
+    location: 'Valledupar, Colombia',
+    period: 'Ene. 2023 – Ene. 2025',
+    current: false,
+    bullets: [
+      'Implementación de servicios backend en Go y .NET Core para soluciones de alto rendimiento.',
+      'Optimización de bases de datos SQL Server y PostgreSQL con reestructuración de índices.',
+      'Automatización de tareas operativas con PowerShell para mejorar tiempos de procesos batch.',
+      'Aseguramiento de integridad y disponibilidad de la información con políticas de respaldo.'
+    ],
+    highlight: {
+      title: 'Logro destacado:',
+      text: 'Reduje hasta un 40% los tiempos de consultas críticas en producción mediante optimización de índices y reescritura de queries pesadas.'
+    }
+  },
+  {
+    role: 'Analista de Datos (Pasantía)',
+    company: 'Fonvisocial',
+    location: 'Valledupar, Colombia',
+    period: 'Ago. 2024 – Dic. 2024',
+    current: false,
+    bullets: [
+      'Consolidación y optimización de bases de datos en SQL para reportería ejecutiva.',
+      'Desarrollo de reportes interactivos en Power BI para la alta gerencia.',
+      'Automatización de procesos de monitoreo y seguimiento de información técnica.'
+    ],
+    highlight: {
+      title: 'Logro destacado:',
+      text: 'Mejoré en más de un 30% el procesamiento de datos consolidando bases dispersas y diseñando dashboards en Power BI que apoyaron decisiones estratégicas de la dirección.'
+    }
+  },
+  {
+    role: 'Desarrollador Backend Junior',
+    company: 'TechSoluciones S.A.S',
+    location: 'Medellín (Remoto)',
+    period: 'Ene. 2022 – Jun. 2022',
+    current: false,
+    bullets: [
+      'Diseño e implementación de arquitecturas de integración con microservicios.',
+      'Gestión de Azure Service Bus y Event Grid para flujos de datos distribuidos.',
+      'Optimización de comunicación entre aplicaciones distribuidas en alta demanda.'
+    ],
+    highlight: {
+      title: 'Logro destacado:',
+      text: 'Generé estrategias para implementar flujos automáticos de escalación de casos y resolución de incidentes, reduciendo los tiempos de respuesta en más de un 25%.'
+    }
+  }
+];
 ---
 
 <section id="experience" class="py-20 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
+      <p class="font-mono text-accent-400 text-sm tracking-[0.3em] uppercase mb-3">
+        Trayectoria
+      </p>
       <h2 class="text-4xl sm:text-5xl font-bold mb-4">
         Mi <span class="text-gradient">Experiencia</span>
       </h2>
       <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-        Mi trayectoria profesional en desarrollo FullStack y tecnologías backend
+        Mi trayectoria profesional construyendo software backend, full stack y soluciones de datos.
       </p>
     </div>
 
     <div class="relative">
       <!-- Timeline line -->
-      <div class="absolute left-4 md:left-1/2 transform md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 to-accent-500"></div>
+      <div class="absolute left-4 md:left-1/2 transform md:-translate-x-0.5 top-0 bottom-0 w-0.5 bg-gradient-to-b from-primary-500 via-accent-500 to-primary-500"></div>
 
       <div class="space-y-12">
-        <!-- Unabase -->
-        <div class="relative flex items-center">
-          <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-slate-900"></div>
-          <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8">
-            <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-xl font-semibold text-gradient">Desarrollador FullStack</h3>
-                <span class="text-sm text-accent-400">Mar. 2025 - Actualidad</span>
+        {experiences.map((exp, index) => {
+          const isLeft = index % 2 === 0;
+          const dotColor = isLeft ? 'bg-primary-500' : 'bg-accent-500';
+          return (
+            <div class="relative flex items-center">
+              {/* Dot on timeline */}
+              <div class={`absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 ${dotColor} rounded-full border-4 border-slate-900 z-10`}>
+                {exp.current && (
+                  <span class="absolute inset-0 rounded-full bg-green-400 animate-ping opacity-75"></span>
+                )}
               </div>
-              <p class="text-accent-400 font-medium mb-3">Unabase</p>
-              <ul class="text-gray-400 space-y-2 text-sm">
-                <li>• Desarrollo y mantenimiento de sistemas web usando JavaScript Vanilla, jQuery, Chart.js</li>
-                <li>• Trabajo con Node.js, Vue.js, SQL, MongoDB y bases de datos 4D</li>
-                <li>• Creación y optimización de aplicaciones web robustas y escalables</li>
-              </ul>
-            </div>
-          </div>
-        </div>
 
-        <!-- Velocity Go -->
-        <div class="relative flex items-center">
-          <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent-500 rounded-full border-4 border-slate-900"></div>
-          <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8 md:ml-auto">
-            <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-xl font-semibold text-gradient">QA Tester</h3>
-                <span class="text-sm text-accent-400">Mar. 2025 - Sep. 2025</span>
-              </div>
-              <p class="text-accent-400 font-medium mb-3">Velocity Go</p>
-              <ul class="text-gray-400 space-y-2 text-sm">
-                <li>• Diseño, ejecución y documentación de casos de prueba manuales</li>
-                <li>• Pruebas funcionales, de regresión, smoke y exploratorias</li>
-                <li>• Reporte y gestión de defectos en herramientas como Jira</li>
-                <li>• Colaboración con el equipo de desarrollo para corrección de errores</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+              <div class={`ml-12 md:ml-0 md:w-1/2 ${isLeft ? 'md:pr-8' : 'md:pl-8 md:ml-auto'}`}>
+                <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300 hover:scale-[1.02] hover:shadow-xl">
+                  <div class="flex flex-wrap items-start justify-between gap-2 mb-2">
+                    <h3 class="text-xl font-semibold text-gradient">{exp.role}</h3>
+                    <span class="text-sm text-accent-400 font-mono whitespace-nowrap">
+                      {exp.period}
+                    </span>
+                  </div>
 
-        <!-- Creador de Soluciones -->
-        <div class="relative flex items-center">
-          <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-primary-500 rounded-full border-4 border-slate-900"></div>
-          <div class="ml-12 md:ml-0 md:w-1/2 md:pr-8">
-            <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-xl font-semibold text-gradient">Desarrollador Backend</h3>
-                <span class="text-sm text-accent-400">Ene. 2023 - Ene. 2025</span>
-              </div>
-              <p class="text-accent-400 font-medium mb-3">Creador de Soluciones</p>
-              <ul class="text-gray-400 space-y-2 text-sm">
-                <li>• Diseño y desarrollo de servicios backend usando Go y .NET</li>
-                <li>• Administración y optimización de bases de datos SQL</li>
-                <li>• Implementación de APIs RESTful y automatización de tareas</li>
-                <li>• Gestión de buenas prácticas de seguridad y respaldo de datos</li>
-              </ul>
-            </div>
-          </div>
-        </div>
+                  <p class="text-accent-400 font-medium mb-1">
+                    {exp.company}
+                    {exp.current && (
+                      <span class="ml-2 inline-flex items-center gap-1.5 px-2 py-0.5 text-xs rounded-full bg-green-400/15 text-green-400 border border-green-400/30 align-middle">
+                        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                        Activo
+                      </span>
+                    )}
+                  </p>
+                  <p class="text-xs text-gray-500 mb-3">{exp.location}</p>
 
-        <!-- TechSoluciones -->
-        <div class="relative flex items-center">
-          <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 bg-accent-500 rounded-full border-4 border-slate-900"></div>
-          <div class="ml-12 md:ml-0 md:w-1/2 md:pl-8 md:ml-auto">
-            <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-xl p-6 hover:border-accent-500/50 transition-all duration-300">
-              <div class="flex items-center justify-between mb-2">
-                <h3 class="text-xl font-semibold text-gradient">Desarrollador Backend</h3>
-                <span class="text-sm text-accent-400">Ene. 2022 - Jun. 2022</span>
-              </div>
-              <p class="text-accent-400 font-medium mb-3">TechSoluciones S.A.S</p>
-              <ul class="text-gray-400 space-y-2 text-sm">
-                <li>• Diseño e implementación de arquitecturas de integración</li>
-                <li>• Gestión de proyectos de integración usando microservicios</li>
-                <li>• Gestión de Azure, Service Bus y Event Grid</li>
-                <li>• Optimización de flujos de datos entre aplicaciones distribuidas</li>
-              </ul>
-              <div class="mt-3 p-3 bg-accent-500/10 rounded-lg">
-                <p class="text-accent-400 text-sm font-medium">Logro destacado:</p>
-                <p class="text-gray-400 text-sm">Generé estrategias para implementar flujos automáticos de escalación de casos y resolución de incidentes, reduciendo tiempos de respuesta y mejorando la eficiencia operativa del equipo.</p>
+                  <ul class="text-gray-400 space-y-2 text-sm">
+                    {exp.bullets.map((bullet) => (
+                      <li class="flex gap-2">
+                        <span class="text-accent-400 mt-0.5">•</span>
+                        <span>{bullet}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {exp.highlight && (
+                    <div class="mt-4 p-3 bg-accent-500/10 border border-accent-500/20 rounded-lg">
+                      <p class="text-accent-400 text-sm font-semibold mb-1">{exp.highlight.title}</p>
+                      <p class="text-gray-300 text-sm leading-relaxed">{exp.highlight.text}</p>
+                    </div>
+                  )}
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          );
+        })}
       </div>
     </div>
   </div>

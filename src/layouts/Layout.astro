@@ -4,27 +4,58 @@ import '../styles/global.css';
 interface Props {
   title?: string;
   description?: string;
+  ogImage?: string;
 }
 
-const { 
-  title = 'Portafolio | Elian Fragozo - Desarrollador FullStack',
-  description = 'Desarrollador FullStack especializado en .NET, Node.js, Go, Python y bases de datos'
+const {
+  title = 'Elian Fragozo · Desarrollador de Software · Soluciones Digitales a la Medida',
+  description = 'Desarrollador Full Stack con +3 años de experiencia. Construyo sitios web, aplicaciones, sistemas de gestión y dashboards a la medida para negocios y emprendedores. Stack: .NET, Spring Boot, Node.js, Angular, Vue, SQL.',
+  ogImage = '/og-image.svg'
 } = Astro.props;
+
+const siteUrl = 'https://elianfragozo.dev';
 ---
 
 <!doctype html>
 <html lang="es">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0ea5e9" />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="author" content="Elian Fragozo Ruiz" />
+    <meta name="keywords" content="desarrollador full stack, ingeniero de sistemas, .NET, Spring Boot, Node.js, Angular, Vue, freelance, Colombia, Valledupar, sitios web, sistemas de gestión, Power BI" />
+
+    <!-- Open Graph (LinkedIn, Facebook, WhatsApp) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={siteUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="es_CO" />
+    <meta property="og:site_name" content="Elian Fragozo" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Canonical -->
+    <link rel="canonical" href={siteUrl} />
   </head>
   <body>
     <slot />
   </body>
 </html>
-

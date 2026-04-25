@@ -1,184 +1,98 @@
 ---
+const skillCategories = [
+  {
+    title: 'Backend',
+    accent: 'cyan',
+    iconColor: 'text-cyan-400',
+    borderColor: 'hover:border-cyan-400/50',
+    skills: ['.NET Core', 'Java (Spring Boot)', 'Node.js', 'Go', 'Python'],
+    icon: 'M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4'
+  },
+  {
+    title: 'Frontend',
+    accent: 'fuchsia',
+    iconColor: 'text-fuchsia-400',
+    borderColor: 'hover:border-fuchsia-400/50',
+    skills: ['Angular', 'React', 'Vue.js', 'JavaScript', 'jQuery', 'Flutter'],
+    icon: 'M4 6h16M4 12h16M4 18h7'
+  },
+  {
+    title: 'Bases de Datos',
+    accent: 'green',
+    iconColor: 'text-green-400',
+    borderColor: 'hover:border-green-400/50',
+    skills: ['SQL Server', 'PostgreSQL', 'MySQL', 'Oracle', 'MongoDB', '4D'],
+    icon: 'M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4'
+  },
+  {
+    title: 'DevOps & Cloud',
+    accent: 'amber',
+    iconColor: 'text-amber-400',
+    borderColor: 'hover:border-amber-400/50',
+    skills: ['Docker', 'Azure', 'AWS', 'Service Bus', 'Event Grid'],
+    icon: 'M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z'
+  },
+  {
+    title: 'Herramientas',
+    accent: 'purple',
+    iconColor: 'text-purple-400',
+    borderColor: 'hover:border-purple-400/50',
+    skills: ['Git / GitHub', 'Jira', 'Postman', 'Swagger', 'Selenium', 'Power BI'],
+    icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z'
+  },
+  {
+    title: 'Metodologías',
+    accent: 'rose',
+    iconColor: 'text-rose-400',
+    borderColor: 'hover:border-rose-400/50',
+    skills: ['Scrum', 'Agile', 'TDD', 'Code Review', 'CI/CD'],
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z'
+  }
+];
 ---
 
 <section id="skills" class="py-20 px-4 sm:px-6 lg:px-8">
   <div class="max-w-6xl mx-auto">
     <div class="text-center mb-16">
+      <p class="font-mono text-accent-400 text-sm tracking-[0.3em] uppercase mb-3">
+        Stack Técnico
+      </p>
       <h2 class="text-4xl sm:text-5xl font-bold mb-4">
         Mis <span class="text-gradient">Habilidades</span>
       </h2>
       <p class="text-gray-400 text-lg max-w-2xl mx-auto">
-        Tecnologías y herramientas con las que trabajo día a día
+        Tecnologías y herramientas con las que construyo soluciones todos los días.
       </p>
     </div>
 
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Backend -->
-      <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-accent-500/50 transition-all duration-300">
-        <h3 class="text-2xl font-semibold mb-6 text-center text-gradient">
-          Backend
-        </h3>
-        <div class="space-y-4">
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">.NET Core</span>
-              <span class="text-accent-400 text-sm">90%</span>
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {skillCategories.map((category) => (
+        <div class={`bg-slate-800/40 backdrop-blur-sm border border-white/10 rounded-2xl p-6 ${category.borderColor} transition-all duration-300 hover:scale-[1.02] hover:shadow-xl`}>
+          <div class="flex items-center gap-3 mb-5">
+            <div class="w-11 h-11 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center">
+              <svg class={`w-5 h-5 ${category.iconColor}`} fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" d={category.icon}/>
+              </svg>
             </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[90%]"></div>
-            </div>
+            <h3 class="text-xl font-semibold text-white">
+              {category.title}
+            </h3>
           </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Node.js</span>
-              <span class="text-accent-400 text-sm">85%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[85%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Go</span>
-              <span class="text-accent-400 text-sm">80%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[80%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Python</span>
-              <span class="text-accent-400 text-sm">80%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[80%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Java</span>
-              <span class="text-accent-400 text-sm">75%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[75%]"></div>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <!-- Bases de Datos -->
-      <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-accent-500/50 transition-all duration-300">
-        <h3 class="text-2xl font-semibold mb-6 text-center text-gradient">
-          Bases de Datos
-        </h3>
-        <div class="space-y-4">
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">SQL Server</span>
-              <span class="text-accent-400 text-sm">90%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[90%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">PostgreSQL</span>
-              <span class="text-accent-400 text-sm">85%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[85%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Oracle</span>
-              <span class="text-accent-400 text-sm">80%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[80%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">MongoDB</span>
-              <span class="text-accent-400 text-sm">80%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[80%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">MySQL</span>
-              <span class="text-accent-400 text-sm">75%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[75%]"></div>
-            </div>
+          <div class="flex flex-wrap gap-2">
+            {category.skills.map((skill) => (
+              <span class="px-3 py-1.5 text-sm bg-white/5 border border-white/10 rounded-lg text-gray-300 hover:bg-white/10 hover:border-white/20 transition-colors">
+                {skill}
+              </span>
+            ))}
           </div>
         </div>
-      </div>
-
-      <!-- Herramientas -->
-      <div class="bg-slate-800/50 backdrop-blur-sm border border-white/10 rounded-2xl p-6 hover:border-accent-500/50 transition-all duration-300">
-        <h3 class="text-2xl font-semibold mb-6 text-center text-gradient">
-          Herramientas
-        </h3>
-        <div class="space-y-4">
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Docker</span>
-              <span class="text-accent-400 text-sm">85%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[85%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Azure</span>
-              <span class="text-accent-400 text-sm">80%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[80%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Power BI</span>
-              <span class="text-accent-400 text-sm">85%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[85%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Git/GitHub</span>
-              <span class="text-accent-400 text-sm">90%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[90%]"></div>
-            </div>
-          </div>
-          <div>
-            <div class="flex justify-between items-center mb-2">
-              <span class="text-gray-300 font-medium">Jira</span>
-              <span class="text-accent-400 text-sm">80%</span>
-            </div>
-            <div class="h-2 bg-slate-700/50 rounded-full overflow-hidden">
-              <div class="h-full bg-gradient-to-r from-primary-500 to-accent-500 rounded-full w-[80%]"></div>
-            </div>
-          </div>
-        </div>
-      </div>
+      ))}
     </div>
 
     <div class="mt-12 text-center">
       <p class="text-gray-400 text-lg">
-        Y siempre aprendiendo nuevas tecnologías... 🚀
+        Y siempre aprendiendo nuevas tecnologías.
       </p>
     </div>
   </div>

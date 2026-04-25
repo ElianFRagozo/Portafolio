@@ -1,116 +1,107 @@
-# 🎨 Portafolio Personal - Desarrollador
+# Portafolio · Elian Fragozo
 
-Un portafolio moderno y minimalista creado con React, Vite, Tailwind CSS y Framer Motion.
+Portafolio personal construido con **Astro + React + Tailwind CSS + Framer Motion**.
+Diseño moderno con estética oscura y acentos neón, optimizado para clientes no-técnicos
+(pequeños negocios, emprendedores, empresas medianas).
 
-## ✨ Características
+## Stack
 
-- 🎭 **Diseño Minimalista**: Interfaz limpia y moderna
-- 🌈 **Animaciones Fluidas**: Transiciones suaves con Framer Motion
-- 🎨 **Colores Atractivos**: Paleta de colores moderna con gradientes
-- 📱 **Responsive**: Perfectamente adaptado a todos los dispositivos
-- ⚡ **Rápido**: Construido con Vite para un rendimiento óptimo
-- 🎯 **Secciones Completas**: Hero, About, Projects, Skills, Contact
+- **Astro 4** — framework principal (renderizado estático)
+- **React 18** — componentes interactivos puntuales
+- **Tailwind CSS 3** — sistema de diseño
+- **Framer Motion** — animaciones
+- **Lucide React** — iconos
 
-## 🚀 Inicio Rápido
-
-### Requisitos Previos
-
-- Node.js 16+ instalado
-- npm o yarn
-
-### Instalación
-
-1. Instala las dependencias:
-```bash
-npm install
-```
-
-2. Inicia el servidor de desarrollo:
-```bash
-npm run dev
-```
-
-3. Abre tu navegador en `http://localhost:3000`
-
-### Construcción para Producción
-
-```bash
-npm run build
-```
-
-Los archivos de producción estarán en la carpeta `dist/`.
-
-## 🎨 Personalización
-
-### Colores
-
-Edita `tailwind.config.js` para cambiar los colores del tema:
-
-```js
-colors: {
-  primary: { ... },
-  accent: { ... }
-}
-```
-
-### Contenido
-
-Actualiza el contenido en cada componente:
-- **Hero.jsx**: Tu nombre, título, descripción
-- **About.jsx**: Tu historia y características
-- **Projects.jsx**: Tus proyectos con imágenes y enlaces
-- **Skills.jsx**: Tus habilidades y niveles
-- **Contact.jsx**: Tu información de contacto
-- **Footer.jsx**: Links de redes sociales
-
-### Imágenes de Proyectos
-
-Reemplaza las URLs de Unsplash en `Projects.jsx` con tus propias imágenes.
-
-## 📦 Tecnologías
-
-- **React 18** - Biblioteca de UI
-- **Vite** - Build tool y dev server
-- **Tailwind CSS** - Framework de CSS
-- **Framer Motion** - Animaciones
-- **Lucide React** - Iconos
-
-## 📝 Estructura del Proyecto
+## Estructura
 
 ```
 Portafolio/
+├── public/
+│   ├── images/
+│   │   ├── elian-foto.jpg          # Foto de perfil
+│   │   └── projects/                # Thumbnails SVG de proyectos
+│   ├── favicon.svg
+│   ├── og-image.svg                 # Imagen para compartir en redes
+│   └── CV_Elian_Fragozo_2026.pdf    # CV descargable (agregar manualmente)
 ├── src/
 │   ├── components/
-│   │   ├── Navbar.jsx
-│   │   ├── Hero.jsx
-│   │   ├── About.jsx
-│   │   ├── Projects.jsx
-│   │   ├── Skills.jsx
-│   │   ├── Contact.jsx
-│   │   └── Footer.jsx
-│   ├── App.jsx
-│   ├── main.jsx
-│   └── index.css
-├── index.html
-├── package.json
-├── vite.config.js
-└── tailwind.config.js
+│   │   ├── Hero.astro               # Header con CTA y descarga de CV
+│   │   ├── About.astro
+│   │   ├── Services.astro           # Servicios para clientes no-tech
+│   │   ├── Experience.astro         # Timeline laboral
+│   │   ├── Projects.astro           # 4 proyectos con repos reales
+│   │   ├── Skills.astro             # Stack técnico (badges)
+│   │   ├── Contact.astro            # Form con mailto fallback
+│   │   ├── Footer.astro
+│   │   ├── Navbar.astro
+│   │   └── *.tsx                    # Efectos React (partículas, etc.)
+│   ├── layouts/Layout.astro         # SEO, OG tags, fuentes
+│   ├── pages/index.astro            # Página principal
+│   └── styles/global.css
+├── astro.config.mjs
+├── tailwind.config.js
+└── package.json
 ```
 
-## 🎯 Próximos Pasos
+## Desarrollo
 
-- [ ] Personaliza el contenido con tu información
-- [ ] Añade tus propios proyectos e imágenes
-- [ ] Conecta el formulario de contacto con EmailJS o similar
-- [ ] Añade tu favicon personalizado
-- [ ] Configura el SEO (meta tags, og:image, etc.)
-- [ ] Despliega en Vercel, Netlify o GitHub Pages
+```bash
+npm install
+npm run dev          # http://localhost:3000
+npm run build        # genera ./dist
+npm run preview      # previsualiza el build
+```
 
-## 📄 Licencia
+## Antes de desplegar
 
-Este proyecto es de código abierto y está disponible bajo la licencia MIT.
+Hay un par de cosas que faltan que conviene resolver antes de publicar:
 
----
+**1. Agregar el CV en PDF.** El botón "Descargar CV" del Hero apunta a
+`/CV_Elian_Fragozo_2026.pdf`. Copia el archivo PDF al folder `public/` con
+ese nombre exacto (o ajusta la ruta en `src/components/Hero.astro`).
 
-¡Hecho con ❤️ y mucho ☕!
+**2. Reemplazar la foto de perfil si quieres.** Está en
+`public/images/elian-foto.jpg`. Cualquier imagen 800x1000 px (o similar
+proporción 4:5) funciona.
 
+**3. Configurar dominio en Layout.astro.** En `src/layouts/Layout.astro`
+está hardcodeado `siteUrl = 'https://elianfragozo.dev'`. Cámbialo a tu
+dominio real antes de deploy (afecta canonical URL y OG tags).
+
+**4. Opcional — formulario de contacto que envíe directo.**
+El form actual abre el cliente de correo del usuario con el mensaje
+prellenado (mailto). Funciona bien y no requiere backend. Si quieres
+que llegue directo a tu inbox sin abrir nada, integra
+[Formspree](https://formspree.io) o [EmailJS](https://www.emailjs.com)
+y reemplaza el bloque `mailtoUrl` en `src/components/Contact.astro`.
+
+## Deploy
+
+Recomendado: **Vercel** o **Netlify** (ambos detectan Astro automáticamente).
+
+```bash
+# Vercel
+vercel deploy
+
+# Netlify
+netlify deploy --prod
+```
+
+GitHub Pages también funciona — necesita ajustar `astro.config.mjs` con
+`site` y `base`.
+
+## Personalización rápida
+
+| Qué quieres cambiar | Dónde |
+|---|---|
+| Texto del Hero / slogan | `src/components/Hero.astro` |
+| Servicios ofrecidos | `src/components/Services.astro` |
+| Proyectos | `src/components/Projects.astro` |
+| Stack técnico (badges) | `src/components/Skills.astro` |
+| Datos de contacto | `src/components/Contact.astro` |
+| Colores del tema | `tailwind.config.js` (primary, accent) |
+| SEO / meta tags | `src/layouts/Layout.astro` |
+
+## Licencia
+
+MIT

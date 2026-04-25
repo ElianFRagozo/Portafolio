@@ -9,45 +9,64 @@ import ExplosiveEffect from './ExplosiveEffect.tsx';
       <!-- Contenido de texto (lado izquierdo) -->
       <div class="text-center lg:text-left">
         <div class="mb-6">
-          <span class="inline-block px-4 py-2 bg-accent-500/10 border border-accent-500/20 rounded-full text-accent-400 text-sm font-medium mb-8">
-            👋 ¡Hola! Bienvenido a mi portafolio
+          <span class="inline-flex items-center gap-2 px-4 py-2 bg-accent-500/10 border border-accent-500/20 rounded-full text-accent-400 text-sm font-medium mb-8">
+            <span class="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
+            Disponible para nuevos proyectos
           </span>
         </div>
 
-        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
-          <span class="animate-slide-in-left inline-block">Hola, Soy</span>{' '}
+        <p class="text-sm sm:text-base font-mono text-accent-400 tracking-[0.3em] uppercase mb-4 animate-slide-in-up">
+          Soluciones digitales a la medida
+        </p>
+
+        <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 leading-[0.95] tracking-tight">
+          <span class="animate-slide-in-left inline-block">Elian</span>{' '}
           <span class="text-gradient animate-fade-in-scale inline-block" style="animation-delay: 0.3s;">
-            Elian
+            Fragozo
           </span>
         </h1>
 
-        <h2 class="text-2xl sm:text-3xl md:text-4xl text-white mb-6 animate-slide-in-up" style="animation-delay: 0.4s;">
-          Desarrollador FullStack
+        <h2 class="text-2xl sm:text-3xl md:text-4xl text-white/90 mb-6 animate-slide-in-up" style="animation-delay: 0.4s;">
+          Desarrollador de Software
         </h2>
 
         <p class="text-lg sm:text-xl text-gray-400 mb-12 max-w-2xl leading-relaxed animate-slide-in-up" style="animation-delay: 0.6s;">
-          Apasionado por crear soluciones escalables y robustas.
-          Especializado en .NET, Node.js, Go, Python y bases de datos.
+          Transformo las ideas de tu negocio en herramientas digitales que <span class="text-green-400 font-semibold">funcionan, se ven bien y crecen contigo</span>.
         </p>
 
         <div class="flex flex-wrap gap-4 justify-center lg:justify-start mb-12">
           <div class="animate-fade-in-scale" style="animation-delay: 0.9s;">
             <ExplosiveEffect>
               <a
-                href="#projects"
+                href="#services"
                 class="px-8 py-4 bg-gradient-to-r from-primary-500 to-accent-500 rounded-full font-semibold text-white shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300 hover-lift block"
               >
-                Conóceme
+                Ver mis servicios
               </a>
             </ExplosiveEffect>
           </div>
-          <div class="animate-fade-in-scale" style="animation-delay: 1.2s;">
+          <div class="animate-fade-in-scale" style="animation-delay: 1.05s;">
             <RocketEffect effectType="sparkle">
               <a
                 href="#contact"
                 class="px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full font-semibold text-white hover:bg-white/20 transition-all duration-300 hover-lift block"
               >
                 Hablemos
+              </a>
+            </RocketEffect>
+          </div>
+          <div class="animate-fade-in-scale" style="animation-delay: 1.2s;">
+            <RocketEffect effectType="pulse">
+              <a
+                href="/CV_Elian_Fragozo_2026.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="px-8 py-4 bg-transparent border border-accent-500/40 rounded-full font-semibold text-accent-400 hover:bg-accent-500/10 hover:border-accent-500/80 transition-all duration-300 hover-lift flex items-center gap-2"
+              >
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2M7 10l5 5 5-5M12 15V3"/>
+                </svg>
+                <span>Descargar CV</span>
               </a>
             </RocketEffect>
           </div>
